@@ -15,4 +15,24 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
+  def friendship_buttons(user)
+    unless current_user.id == user.id
+    unless current_user.friendships.find_by(friend_id: user.id)
+      return link_to('Invite to friendship', friendships_path(:friend_id => user), :method => :post, class: "btn")
+    end
+    if user.friendships.find_by(friend_id: current_user.id)
+      friendship = user.friendships.find_by(friend_id: current_user.id)
+      if friendship.status == 1
+        # return link_to('Accept', friendships_path(:friend_id => user), :method => :post, class: "btn") + link_to('Reject', friendships_path(:friend_id => user), :method => :post, class: "btn")
+      end
+      if friendship.status == 2
+        return "Friend request sent."
+      end
+      if friendship.status == 3
+        return "Friend"
+      end
+    end
+    end
+  end
 end
