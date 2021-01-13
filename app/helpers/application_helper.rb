@@ -24,7 +24,7 @@ module ApplicationHelper
     if user.friendships.find_by(friend_id: current_user.id)
       friendship = user.friendships.find_by(friend_id: current_user.id)
       if friendship.status == 1
-        return link_to('Accept', friendship_update_status_path(friendship.id, :status => 3), :method => :post , class: "btn") + link_to('Reject', friendship_update_status_path(friendship.id, :status => 4), :method => :post, class: "btn")
+        return link_to('Accept', friendship_update_path(friendship.id, :status => 3), :method => :post , class: "btn") + link_to('Reject', friendship_update_path(friendship.id, :status => 4), :method => :post, class: "btn")
       end
       if friendship.status == 2
         return "Friend request sent."
@@ -32,7 +32,14 @@ module ApplicationHelper
       if friendship.status == 3
         return "Friend"
       end
+      if friendship.status == 4
+        return "Friendship request rejected."
+      end
     end
     end
+  end
+
+  def friendship_requests
+    requests = current_user.friendships.where(status: 2)
   end
 end

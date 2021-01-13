@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:index, :show]
-  resources :friendships, only: [:create, :update, :index, :update_status] do
-    post :update_status
+  resources :friendships, only: [:create, :update, :index] do
+    post :update
   end
   resources :posts, only: [:index, :create] do
     resources :comments, only: [:create]
