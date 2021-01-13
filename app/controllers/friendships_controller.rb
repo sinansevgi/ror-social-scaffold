@@ -1,4 +1,8 @@
 class FriendshipsController < ApplicationController
+  def index
+    @friendships = current_user.friendships.all
+  end
+  
   def create
     #status codes:
     # pending = 1
@@ -11,5 +15,14 @@ class FriendshipsController < ApplicationController
     redirect_to users_path, notice: 'Friend request submitted.' if @friendship.save && @reverse.save
   end
 
+  def update
+    # @friendship = Friendship.find_by(:user_id => params[:friend_id], :friend_id => params[:user_id])
+    @friendship.status = params[:status]
+  end
 
+  def update_status
+    @friendship = Friendship.find(params[:friendship_id])
+    @friendship.update(:status => params[:status])
+    redirect_to users_path
+  end
 end
