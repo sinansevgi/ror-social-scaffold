@@ -1,5 +1,3 @@
-
-
 module ApplicationHelper
   def menu_link_to(link_text, link_path)
     class_name = current_page?(link_path) ? 'menu-item active' : 'menu-item'
@@ -38,5 +36,6 @@ module ApplicationHelper
 
   def friendship_requests
     requests = current_user.friendships.where(status: 2)
+    requests
   end
 end

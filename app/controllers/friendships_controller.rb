@@ -1,11 +1,7 @@
-
-
 class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(friend_id: params[:friend_id], status: 1)
-    if @friendship.save
-      redirect_to users_path, notice: 'Friend request submitted.'
-    end
+    redirect_to users_path, notice: 'Friend request submitted.' if @friendship.save
   end
 
   def update
