@@ -5,14 +5,14 @@ class Friendship < ApplicationRecord
 
   after_create do |friendship|
     unless Friendship.find_by(user_id: friendship.friend_id, friend_id: friendship.user_id)
-      reverse = Friendship.create(user_id: friendship.friend_id, friend_id: friendship.user_id, status: 1)
+      reverse = Friendship.create(user_id: friendship.friend_id, friend_id: friendship.user_id, status: 2)
       reverse.save
     end
   end
 
   after_update do |friendship|
     reverse = Friendship.find_by(user_id: friendship.friend_id, friend_id: friendship.user_id)
-    unless reverse.status == friendship.status
+    unless (reverse.status == friendship.status) || (friendship.status != 3)
       reverse.status = friendship.status
       reverse.save
     end
