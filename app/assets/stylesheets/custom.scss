@@ -311,7 +311,8 @@ form {
   }
 }
 
-.btn:link, .btn:visited {
+.btn:link,
+.btn:visited {
   background-color: white;
   color: black;
   border: 2px solid green;
@@ -322,7 +323,8 @@ form {
   margin-left: 5px;
 }
 
-.btn:hover, .btn:active {
+.btn:hover,
+.btn:active {
   background-color: green;
   color: white;
 }
