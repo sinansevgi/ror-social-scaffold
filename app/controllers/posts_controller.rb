@@ -20,13 +20,7 @@ class PostsController < ApplicationController
   private
 
   def timeline_posts
-    accepted_friends = []
-    accepted_friends << current_user.id
-    current_user.friendships.where(status: 3).each do |friendship|
-      accepted_friends << friendship.friend.id
-    end
-    posts = Post.where(:user_id => accepted_friends)
-    @timeline_posts ||= posts.ordered_by_most_recent
+    @timeline_posts ||= Post.friends_posts(current_user.user_and_friends).ordered_by_most_recent
   end
 
   def post_params
