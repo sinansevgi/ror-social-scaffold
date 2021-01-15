@@ -1,6 +1,6 @@
 # Members Only
-This is a small-scale social media appplication. Users are able to request, accept, and reject friendships. When a user sends a friend request to another user, the user receiving the friendship request can choose to accept or reject. When a friendship is accepted, a freindship is created reciprocally. When a friendship is rejected, no friendship is created and users are notified. 
 
+This is a small-scale social media appplication. Users are able to request, accept, and reject friendships. When a user sends a friend request to another user, the user receiving the friendship request can choose to accept or reject. When a friendship is accepted, a freindship is created reciprocally. When a friendship is rejected, no friendship is created and users are notified. 
 
 ## Built With
 
