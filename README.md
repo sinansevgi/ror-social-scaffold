@@ -1,93 +1,57 @@
-# Scaffold for social media app with Ruby on Rails
+# Members Only
+This is a small-scale social media appplication. Users are able to request, accept, and reject friendships.
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
-
-## Live Demo
-
-TBA
+- Ruby -v  2.7.0
+- Rails -v 6.0.3.4
+- PostgreSQL
+- Devise
 
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+To get this project up and running locally, you must already have Ruby, and Ruby on Rails installed on your computer.
 
-### Setup
+**To get this project set up on your local machine, follow these simple steps:**
 
-Instal gems with:
-
-```
-bundle install
-```
-
-Setup database with:
-
-```
-   rails db:create
-   rails db:migrate
-```
-
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
+1. Open Terminal.
+2. Navigate to your desired location to download the contents of this repository.
+3. Run ```git clone https://github.com/sinansevgi/ror-social-scaffold.git```.
+4. Run ```cd ror-social-scaffold```.
+5. Run ```bundle install```.
+6. Run ```yarn install```.
+7. Run ```rails db:migrate```.
+8. Run ```rails server``` or ```rails s```.
 
 
-### Usage
+## Author Details:
 
-Start server with:
+👤 **Sinan Sevgi**
 
-```
-    rails server
-```
+- GitHub: [@sinansevgi](https://github.com/sinansevgi)
+- LinkedIn: [@sinansevgi](https://www.linkedin.com/in/sinan-s-52559437/)
+- Twitter: [@nativeofcybers1](https://twitter.com/nativeofcybers1)
 
-Open `http://localhost:3000/` in your browser.
 
-### Run tests
+👤 **Chad-Leigh Van Wyk**
 
-```
-    rpsec --format documentation
-```
+- Github:[@El-Potato-Slayer](https://github.com/El-Potato-Slayer)
+- Twitter:[@elpotatoslayer](https://twitter.com/elpotatoslayer)
+- LinkedIn: [Chad van Wyk](https://www.linkedin.com/in/chad-van-wyk-4228b21a6/)
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
+## Acknowledgment
+The resources we have used to develop our project:
 
-### Deployment
-
-TBA
-
-## Authors
-
-TBA
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
+- [Odin-project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-TBA
+Give a ⭐ to me on GitHub — it helps!
 
 ## 📝 License
 
-TBA
-
+This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.  
