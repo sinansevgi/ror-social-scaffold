@@ -9,4 +9,15 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
+
+  def user_and_friends
+    user_friends = []
+    user_friends << id
+    friends.each do |friend|
+      user_friends << friend.id
+    end
+    user_friends
+  end
 end
