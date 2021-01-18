@@ -6,7 +6,6 @@ module PostHelper
   end
 
   def friendship_requests
-    requests = current_user.friendships.where(status: 2)
-    requests
+    current_user.friendships.where(status: 2)
   end
 end

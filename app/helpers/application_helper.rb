@@ -32,7 +32,9 @@ module ApplicationHelper
     return ' ' if current_user.id == user.id
 
     invite_button = link_to('Invite to friendship', friendships_path(friend_id: user), method: :post, class: 'btn')
-    return invite_button unless current_user.friendships.find_by(friend_id: user.id)
+    unless current_user.friendships.find_by(friend_id: user.id) || user.friendships.find_by(friend_id: current_user.id)
+      return invite_button
+    end
 
     friendship_request_buttons(user)
   end
