@@ -16,7 +16,8 @@ class User < ApplicationRecord
     user_friends = []
     user_friends << id
     friends.each do |friend|
-      user_friends << friend.id
+      friendship = Friendship.find_by(user_id: id, friend_id: friend.id)
+      user_friends << friend.id if friendship.status == 3
     end
     user_friends
   end
